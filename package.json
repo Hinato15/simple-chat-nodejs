@@ -1,0 +1,9 @@
+{
+    "name": "simple-chat-nodejs",
+    "version": "0.1.0",
+    "dependencies": {
+        "socket.io": "~2.3.0"
+    },
+    "author": "Hinato15 <valentinmartel15@gmail.com>",
+    "description": "Un chat en temps réel en nodeJs"
+}

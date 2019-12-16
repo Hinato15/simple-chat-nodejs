@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" >
+    <title>Chat NodeJS</title>
+</head>
+<body>
+    <input type="text" name="newMessage" id="newMessage"/>
+    <input type="button" value="Envoyer" id="sendMessage" />
+
+    <p id="displayMessage"></p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io.connect('http://localhost:8080');
+
+        socket.on('message', function(message) {
+                alert('Le serveur a un message pour vous : ' + message);
+            })
+
+        document.getElementById("sendMessage").addEventListener("click", function () {
+                let newMessage = document.getElementById("newMessage").value;
+                socket.emit('message', newMessage);
+            })
+    </script>
+
+</body>
+</html>
